@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="assets/plugins/grid-gallery/css/grid-gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <script src="./assets/js/register.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        <form action="registerr.php" method="post" id="signupForm">
+            <div class="form-group">
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter your full name">
+                <div class="warning-username"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email id">
+                <div class="warning-email"></div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No.</label>
+                <input type="text" id="mobile" name="mobile_no" placeholder="Enter your mobile no.">
+                <div class="warning-mobile-no"></div>
+            </div>
+            <div class="form-group">
+                <label for="blood_group">Blood Group</label>
+                <select name="blood_group" id="blood_group">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" class="w-100"></textarea>
+                <div class="warning-address"></div>
+            </div>
+            <button type="submit" onclick="validate(event)" class="btn btn-danger w-75" style="margin-left: 2rem !important;" name="uploaded">Register</button>
+        </form>
+        <!-- <div id="popup" style="display: none;">
+            <div class="popup-content">
+                <img src="./assets/images/register/sccess.svg" width="100" alt="">
+                <h2>Registration Completed!</h2>
+                <p>Thank you for registration. More information will be provided through email and SMS.</p>
+                <img id="close-popup" onclick="closePopup()" src="./assets/images/register/close.svg" alt="">
+            </div>
+        </div> -->
+    </div>
+
+    <!-- <div> 
+        <?php
+        // Database connection settings
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'blood'; 
+
+        // Create a connection to the database and check for connection errors
+        $con = mysqli_connect($host, $user, $pass, $db) or die("Connection failed: " . mysqli_error($con));
+
+        if (isset($_POST['uploaded'])) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $mobile_no = $_POST['mobile_no'];
+            $blood_group = $_POST['blood_group'];
+            $address = $_POST['address'];
+
+            // Insert data into the database
+            $q = "INSERT INTO register (username, email, mobile_no, blood_group, address) VALUES ('$username', '$email', '$mobile_no', '$blood_group', '$address')";
+            $query = mysqli_query($con, $q);
+
+            if ($query) {
+                echo "<script>document.getElementById('popup').style.display = 'block';</script>";
+            } else {
+                echo "Error: " . mysqli_error($con);
+            }
+        }
+        ?>
+    </div> -->
+
+    <!-- <script>
+    function closePopup() {
+        window.location.href = 'campaigns.html';
+    }
+    </script> -->
+</body>
+
+</html>
